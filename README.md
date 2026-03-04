@@ -15,7 +15,7 @@ This repository analyzes the Breast Cancer Wisconsin (Diagnostic) dataset and co
 The project has two main goals:
 
 1. Perform clinically motivated exploratory data analysis (EDA) on nuclear morphology features.
-2. Train and compare baseline ML classifiers, then test whether a reduced feature set can retain strong performance.
+2. Train and compare baseline ML classifiers, then evaluate cross-validation, hyperparameter tuning, and reduced-feature behavior.
 
 ## Clinical Motivation
 
@@ -51,9 +51,10 @@ Features describe cell nucleus morphology (radius, perimeter, area, smoothness, 
 Notes:
 
 - `Notebooks/eda.ipynb` contains structured EDA with interpretation after visualizations.
-- `Notebooks/modeling.ipynb` contains model training, comparison, interpretability, and reduced-feature analysis.
+- `Notebooks/modeling.ipynb` contains model training, comparison, interpretability, reduced-feature analysis, and CV/tuning summaries.
 - `Results/eda_figures` and `Results/modeling_figures` store generated plots.
-- `Data/`, `Models/`, and `SRC/` currently contain placeholders and are ready for expansion.
+- `SRC/` contains runnable scripts for feature engineering, CV+tuning training, and inference.
+- `Models/` stores serialized model artifacts and metadata from script-based training.
 
 ## Reproducibility
 
@@ -71,7 +72,7 @@ Both notebooks are set up to run top-to-bottom and use a fixed seed (`np.random.
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-pip install jupyter numpy pandas matplotlib seaborn scikit-learn
+pip install -r requirements.txt
 ```
 
 Then launch Jupyter:
@@ -85,17 +86,29 @@ Run notebooks in this order:
 1. `Notebooks/eda.ipynb`
 2. `Notebooks/modeling.ipynb`
 
+Optional script pipeline run:
+
+```bash
+python SRC/train_cv_tuned.py
+```
+
 ## Current Outputs
 
 Examples of generated artifacts:
 
 - EDA: class distribution, feature boxplots/histograms, correlation heatmap, PCA scatter.
-- Modeling: confusion matrices, ROC/PR comparison curves, feature importance comparison.
+- Modeling: confusion matrices, ROC/PR comparison curves, feature importance comparison, CV/tuning summary tables.
 
 Saved figures are written to:
 
 - `Results/eda_figures/`
 - `Results/modeling_figures/`
+
+Saved tables and model artifacts:
+
+- `Results/modeling_tables/` (CV, tuning, and test summaries)
+- `Models/best_model.joblib`
+- `Models/best_model_metadata.json`
 
 ## Key Findings (Current Version)
 
@@ -107,6 +120,4 @@ Saved figures are written to:
 
 ## Next Improvements
 
-- Add pinned package versions to `requirements.txt`.
 - Add external validation and calibration analysis.
-- Save trained models to `Models/` with versioned metadata.
