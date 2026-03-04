@@ -1,6 +1,6 @@
 # Breast Cancer Diagnostic Prediction
 # BME 3968 - Medical AI - Project 1 Group 4
-This repository includes EDA notebooks, modular source code for preprocessing and model training, evaluation scripts, saved models, results visualizations, a demo notebook for inference, and full documentation with dependency specifications for reproducibility.
+    This repository includes EDA notebooks, modular source code for preprocessing and model training, evaluation scripts, saved models, results visualizations, a demo notebook for inference, and full documentation with dependency specifications for reproducibility.
 
 # Group Members & Roles 
     1. Ava Frank: (title of role)
@@ -13,6 +13,7 @@ This repository includes EDA notebooks, modular source code for preprocessing an
     Role description: 
 
 # Overview
+    This project develops machine learning models to assist clinicians in classifying breast tumors as benign or malignant based on nuclear morphology features extracted from fine needle aspiration biopsies. 
 
 # Clinical Context 
 
