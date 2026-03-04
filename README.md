@@ -13,12 +13,13 @@
     Role description: 
 
 # Overview
-    This project develops machine learning models to assist clinicians in classifying breast tumors as benign or malignant based on nuclear morphology features extracted from fine needle aspiration biopsies. 
+    This project develops machine learning (ML) models to assist clinicians in classifying breast tumors as benign or malignant based on nuclear morphology features extracted from fine needle aspiration biopsies. 
 
 # Clinical Context 
     This will be added at the end based on paper (see intro)
 
 # Problem Statement
+    We aim to evaluate classic ML algorithms for the binary classification of breast tumors and determine whether a reduced feature subset can maintain diagnostic performance. 
 
 # Setup Instructions 
 
