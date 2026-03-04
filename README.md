@@ -1,67 +1,112 @@
 # Breast Cancer Diagnostic Prediction
-# BME 3968 - Medical AI - Project 1 Group 4
-This repository includes EDA notebooks, modular source code for preprocessing and model training, evaluation scripts, saved models, results visualizations, a demo notebook for inference, and full documentation with dependency specifications for reproducibility. CHANGE THIS
 
-# Group Members & Roles 
-1. Ava Frank: (title of role)
-    * Role description: 
+BME 3968 — Medical AI — Project 1 (Group 4)
 
-2. Caroline Horey: (title of role)
-    * Role description: 
+This repository analyzes the Breast Cancer Wisconsin (Diagnostic) dataset and compares multiple machine learning models for benign vs malignant tumor classification.
 
-3. Ayushi Elhence: (title of role)
-    * Role description: 
+## Team
 
-# Overview
-This project develops machine learning (ML) models to assist clinicians in classifying breast tumors as benign or malignant based on nuclear morphology features extracted from fine needle aspiration (FNA) biopsies. 
+- Ava Frank
+- Caroline Horey
+- Ayushi Elhence
 
-# Clinical Context 
-This will be added at the end based on paper (see intro)
+## Project Overview
 
-# Problem Statement
-We aim to evaluate classic ML algorithms for the binary classification of breast tumors and determine whether a reduced feature subset can maintain diagnostic performance. 
+The project has two main goals:
 
-# Data Information FORMAT NEEDS FIXING 
-This project uses the Breast Cancer Wisconsin (Diagnostic) dataset (OpenML ID: 1510), originally collected at the University of Wisconsin and distributed through the UCI Machine Learning Repository. 
-* Dataset Summary 
-    * Samples: 569 patients
-    * Features: 30 numeric features 
-    * Target Classes: 2 (Benign, Malignant)
-* Feature Description   
-Features are computed from digitalized images of FNA biopsies of breast masses.
-They quantify nuclear morphology charateristics such as: 
-    * Radius
-    * Texture
-    * Perimeter
-    * Area 
-    * Smoothness 
-    * Compactness
-    * Concavity
-    * Concave points 
-    * Symmetry 
-    * Fractal dimension
-Each of these variables is calculated as mean, standard error, and worst (largest) value, resulting in 30 total predictors 
-* Target Variable    
-The task is a binary classification problem: 
-    * Benign 
-    * Malignant
+1. Perform clinically motivated exploratory data analysis (EDA) on nuclear morphology features.
+2. Train and compare baseline ML classifiers, then test whether a reduced feature set can retain strong performance.
 
-# Repository Structure
-- **data/** - Raw dataset files
-- **notebooks/** - EDA and modeling notebooks
-- **src/** - Modular preprocessing and training scripts
-- **models/** - Saved trained models (.pkl) 
-- **reslts/** - ROC curves, confusion matrices, performance tables 
+## Clinical Motivation
 
-# Setup Instructions 
+Breast cancer screening and triage benefit from high-sensitivity diagnostic tools. In this project, malignant cases are treated as the positive class during modeling so that recall-oriented evaluation can directly reflect missed-cancer risk.
 
+## Dataset
 
-# Run Commands
+- Name: Breast Cancer Wisconsin (Diagnostic)
+- Samples: 569
+- Predictors: 30 numeric morphology features
+- Classes: 2 (Benign, Malignant)
+- Source interface used in notebooks: `sklearn.datasets.load_breast_cancer`
 
-# Results
+Features describe cell nucleus morphology (radius, perimeter, area, smoothness, compactness, concavity, concave points, symmetry, fractal dimension), each represented via mean, standard error, and worst values.
 
-# Summary 
+## Repository Structure
 
-# Folder Explanations
+```text
+.
+├── Data/
+├── Models/
+├── Notebooks/
+│   ├── eda.ipynb
+│   └── modeling.ipynb
+├── Results/
+│   ├── eda_figures/
+│   └── modeling_figures/
+├── SRC/
+├── README.md
+└── requirements.txt
+```
 
-# Dependencies
+Notes:
+
+- `Notebooks/eda.ipynb` contains structured EDA with interpretation after visualizations.
+- `Notebooks/modeling.ipynb` contains model training, comparison, interpretability, and reduced-feature analysis.
+- `Results/eda_figures` and `Results/modeling_figures` store generated plots.
+- `Data/`, `Models/`, and `SRC/` currently contain placeholders and are ready for expansion.
+
+## Reproducibility
+
+Both notebooks are set up to run top-to-bottom and use a fixed seed (`np.random.seed(42)`) for reproducibility.
+
+## Quick Start
+
+1. Create and activate a virtual environment.
+2. Install required packages.
+3. Open the notebooks and run all cells.
+
+### Example setup (Linux/macOS)
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install jupyter numpy pandas matplotlib seaborn scikit-learn
+```
+
+Then launch Jupyter:
+
+```bash
+jupyter notebook
+```
+
+Run notebooks in this order:
+
+1. `Notebooks/eda.ipynb`
+2. `Notebooks/modeling.ipynb`
+
+## Current Outputs
+
+Examples of generated artifacts:
+
+- EDA: class distribution, feature boxplots/histograms, correlation heatmap, PCA scatter.
+- Modeling: confusion matrices, ROC/PR comparison curves, feature importance comparison.
+
+Saved figures are written to:
+
+- `Results/eda_figures/`
+- `Results/modeling_figures/`
+
+## Key Findings (Current Version)
+
+- No missing values in the dataset.
+- Strong discriminative signal in morphology-driven size/irregularity features.
+- High multicollinearity among geometric features (for example radius/perimeter/area families).
+- Multiple models achieve strong classification performance.
+- A reduced top-feature subset can still maintain competitive performance.
+
+## Next Improvements
+
+- Add pinned package versions to `requirements.txt`.
+- Add external validation and calibration analysis.
+- Save trained models to `Models/` with versioned metadata.
