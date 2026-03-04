@@ -27,7 +27,7 @@ This project uses the Breast Cancer Wisconsin (Diagnostic) dataset (OpenML ID: 1
     * Samples: 569 patients
     * Features: 30 numeric features 
     * Target Classes: 2 (Benign, Malignant)
-* Feature Description 
+* Feature Description   
 Features are computed from digitalized images of FNA biopsies of breast masses.
 They quantify nuclear morphology charateristics such as: 
     * Radius
@@ -41,10 +41,17 @@ They quantify nuclear morphology charateristics such as:
     * Symmetry 
     * Fractal dimension
 Each of these variables is calculated as mean, standard error, and worst (largest) value, resulting in 30 total predictors 
-* Target Variable
+* Target Variable    
 The task is a binary classification problem: 
     * Benign 
     * Malignant
+
+# Repository Structure
+- **data/** - Raw dataset files
+- **notebooks/** - EDA and modeling notebooks
+- **src/** - Modular preprocessing and training scripts
+- **models/** - Saved trained models (.pkl) 
+- **reslts/** - ROC curves, confusion matrices, performance tables 
 
 # Setup Instructions 
 
