@@ -1,0 +1,6 @@
+Model,Best CV ROC-AUC,Test Accuracy,Test Recall (Malignant),Test ROC-AUC,Best Params
+Logistic Regression,0.9957688338493291,0.9649122807017544,0.9285714285714286,0.996031746031746,"{'model__C': 1.0, 'model__class_weight': None}"
+K-Nearest Neighbors,0.9891124871001032,0.9473684210526315,0.8809523809523809,0.9957010582010581,"{'model__n_neighbors': 15, 'model__p': 2, 'model__weights': 'distance'}"
+Random Forest,0.9891124871001032,0.9649122807017544,0.9047619047619048,0.9940476190476191,"{'model__max_depth': 8, 'model__min_samples_split': 2, 'model__n_estimators': 200}"
+Linear SVM,0.9953560371517028,0.9649122807017544,0.9285714285714286,0.9937169312169313,{'model__C': 0.5}
+Gradient Boosting,0.9931888544891642,0.9649122807017544,0.9047619047619048,0.9933862433862434,"{'model__learning_rate': 0.1, 'model__max_depth': 2, 'model__n_estimators': 200}"
