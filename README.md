@@ -6,9 +6,9 @@ This repository analyzes the Breast Cancer Wisconsin (Diagnostic) dataset and co
 
 ## Team
 
-- Ava Frank
-- Caroline Horey
-- Ayushi Elhence
+- Ava Frank: Created the GitHub repository and wrote the Methods, Results, and Discussion sections of the report.
+- Carolina Horey: Wrote the Literature Review and contributed to the Abstract.
+- Ayushi Elhence: Wrote the Introduction and contributed to the Abstract.
 
 ## Project Overview
 
