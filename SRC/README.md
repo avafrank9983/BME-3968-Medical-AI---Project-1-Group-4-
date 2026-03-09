@@ -21,3 +21,19 @@ This will generate:
 - `Results/modeling_figures/tuned_pr_comparison.png`
 - `Models/best_model.joblib`
 - `Models/best_model_metadata.json`
+
+## Inference
+
+Run batch inference on a CSV containing the original 30 Breast Cancer Wisconsin feature columns:
+
+```bash
+python SRC/inference.py \
+	--model Models/best_model.joblib \
+	--input Data/new_patients.csv \
+	--output Results/predictions/new_patients_predictions.csv \
+	--threshold 0.5
+```
+
+Notes:
+- `--threshold` is optional and defaults to `0.5`.
+- Input columns are validated against the expected raw dataset schema before prediction.

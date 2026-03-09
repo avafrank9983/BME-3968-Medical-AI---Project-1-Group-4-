@@ -92,6 +92,16 @@ Optional script pipeline run:
 python SRC/train_cv_tuned.py
 ```
 
+Optional batch inference run:
+
+```bash
+python SRC/inference.py \
+	--model Models/best_model.joblib \
+	--input Data/new_patients.csv \
+	--output Results/predictions/new_patients_predictions.csv \
+	--threshold 0.5
+```
+
 ## Current Outputs
 
 Examples of generated artifacts:
